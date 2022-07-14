@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import products from './frontend/products.json'
+
+export const cartContext = createContext();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <cartContext.Provider value={products}>
     <App />
-  </React.StrictMode>
+  </cartContext.Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
