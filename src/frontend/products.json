@@ -1,0 +1,80 @@
+ [{
+            "id": 1,
+            "title": "The Original Super Donut",
+            "price": 135,
+            "image": "/assets/images/product-1.jpg",
+            "quantity": 1
+        },
+        {
+            "id": 2,
+            "title": "The Original Super Donut",
+            "price": 950,
+            "image": "/assets/images/product-2.jpg",
+            "quantity": 1
+        },
+        {
+            "id": 3,
+            "title": "The Original Super Donut",
+            "price": 750,
+            "image": "/assets/images/product-3.jpg",
+            "quantity": 1
+        },
+        {
+            "id": 4,
+            "title": "The Original Super Donut",
+            "price": 999,
+            "image": "/assets/images/product-4.jpg",
+            "quantity": 1
+        },
+        {
+            "id": 5,
+            "title": "The Original Super Donut",
+            "price": 250,
+            "image": "/assets/images/product-5.jpg",
+            "quantity": 1
+
+        },
+        {
+            "id": 6,
+            "title": "The Original Super Donut",
+            "price": 850,
+            "image": "/assets/images/product-6.jpg",
+            "quantity": 1
+
+        },
+        {
+            "id": 7,
+            "title": "The Original Super Donut",
+            "price": 600,
+            "image": "/assets/images/product-7.jpg",
+            "quantity": 1
+        },
+        {
+            "id": 8,
+            "title": "The Original Super Donut",
+            "price": 350,
+            "image": "/assets/images/product-8.jpg",
+            "quantity": 1
+        },
+        {
+            "id": 9,
+            "title": "The Original Super Donut",
+            "price": 799,
+            "image": "/assets/images/product-8.jpg",
+            "quantity": 1
+        },
+        {
+            "id": 10,
+            "title": "The Original Super Donut",
+            "price": 150,
+            "image": "/assets/images/product-9.jpg",
+            "quantity": 1
+        },
+        {
+            "id": 11,
+            "title": "The Original Super Donut",
+            "price": 650,
+            "image": "/assets/images/product-7.jpg",
+            "quantity": 1
+        }
+    ]
