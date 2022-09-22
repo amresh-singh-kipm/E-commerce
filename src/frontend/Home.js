@@ -5,6 +5,7 @@ import ParentCallback from "./ParentCallback";
 import { cartContext } from "../index";
 import CustomHooks from "./CustomHooks";
 import Form from "./Form";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const formData = [
@@ -36,9 +37,11 @@ function Home() {
   ];
   const formHeaderClass = "form-section";
 
- 
+ const urlForPostData = "https://jsonplaceholder.typicode.com/posts"
 
   const products = useContext(cartContext);
+
+  const navigate  = useNavigate()
 
   const [data, error] = CustomHooks(
     "https://jsonplaceholder.typicode.com/posts"
@@ -77,13 +80,22 @@ function Home() {
     <>
       <div className="row">
         <Navbar />
-        {/* {data && data.map((item,i)=>{
+
+        <ul>
+        {data && data.map((item,i)=>{
         
-        return(<p key={i}>
+        return(
+       
+          <li style={{textAlign:"center"}}  key={i}>
+        <p>
         {item.body}
-        
-        </p>)
-      })} */}
+        </p>
+        <button className="btn btn-danger" onClick={()=>navigate(`/detail`,sessionStorage.setItem("itemID",item.id)) }>Read More</button>
+      </li>
+      
+        )
+      })}
+        </ul>
         {products &&
           products.map((item, index) => (
             <div className="col-lg-4" key={index}>
@@ -101,9 +113,10 @@ function Home() {
           ))}
       </div>{" "}
       <div>
-        <Form name={formData} formHeaderClass={formHeaderClass} />
+        <Form name={formData} formHeaderClass={formHeaderClass} url={urlForPostData}/>
         {/* <HighOC component={ParentCallback}/> */}
       </div>
+     
     </>
   );
 }

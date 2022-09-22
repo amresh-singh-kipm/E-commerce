@@ -491,4 +491,17 @@ th{
   background-color: aqua;
 border-radius: 25px;
 padding: 20px;
+margin-bottom:40px ;
+}
+.form-group{
+  font-size: 20px !important;
+}
+.form-control{
+  font-size: 20px !important;
+}
+.detail-page{
+  font-size: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 400;
+  color: black;
 }
