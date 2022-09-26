@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { useLocation } from "react-router-dom";
 import CustomHooks from "./CustomHooks";
+import Search from "./Search";
 
 function Detail() {
   const location = useLocation();
@@ -11,6 +12,8 @@ function Detail() {
   const itemId = sessionStorage.getItem("itemID");
 
   const [dataValue, setDataValue] = useState("");
+
+  const [query,setQuery] = useState("")
 
   const [data, error] = CustomHooks(
     `https://jsonplaceholder.typicode.com/posts`
@@ -23,12 +26,13 @@ function Detail() {
       .catch((error) => console.log(error));
   }, []);
 
+
   const scrollSomewhere = () => {
     setTimeout(() => {
       document
         .getElementById(itemId)
         .scrollIntoView({ behavior: "smooth", block: "center" });
-      document.getElementById(itemId).style.background = "#28a745";
+      document.getElementById(itemId).style.background = "#20c997";
       document.getElementById(itemId).style.color = "#fff";
 
     }, 200);
@@ -36,6 +40,7 @@ function Detail() {
 
   useEffect(() => {
     scrollSomewhere();
+  
   }, []);
 
   const wheelFuction = () => {
@@ -44,8 +49,10 @@ function Detail() {
       console.log("mouse is scrolled");
   };
 
-  return (
-    <div className="container">
+
+return (
+  <div className="container" id="container">
+         
       <h2>
         {dataValue && dataValue.id}
         <hr />
@@ -54,16 +61,19 @@ function Detail() {
       </h2>
 
       <div onWheel={wheelFuction}>
-      {data &&
+     
+      {/* {data &&
         data.map((item) => {
           return (
             <p id={item.id} key={item.id} className="detail-page">
               {item.body}
-            </p>
+              </p>
             
-          );
-        })}
+              );
+        })} */}
       </div>
+      {data&&<Search search={data}/>}
+            
     </div>
   );
 }
