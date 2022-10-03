@@ -17,19 +17,90 @@ function ParentCallback() {
   ];
   const arr3 = [];
   const [dataValue, serDataValue] = useState(null);
-  // console.log(arr2.greeting)
+
+  var nestedArray = [
+    {
+      id: "101",
+      firstName: "John",
+      lastName: "Smith",
+      age: 25,
+      countryName: "US",
+      subjectDetails: [
+        {
+          subjectId: "Java-101",
+          subjectName: {
+            theory: [{ subject: "sst" }, { subject: "science" }],
+            practical: "chemistry",
+          },
+        },
+      ],
+    },
+    {
+      uniqueId: "details_10001",
+    },
+    {
+      id: "102",
+      firstName: "morgan",
+      lastName: "Smith",
+      age: 25,
+      countryName: "US",
+      subjectDetails: [
+        {
+          subjectId: "Java-102",
+          subjectName: {
+            theory: [{ subject: "german" }, { subject: "geography" }],
+            practical: "biology",
+          },
+        },
+      ],
+    },
+    {
+      uniqueId: "details_10001",
+    },
+    {
+      id: "103",
+      firstName: "anna",
+      lastName: "Smith",
+      age: 25,
+      countryName: "US",
+      subjectDetails: [
+        {
+          subjectId: "Java-103",
+          subjectName: {
+            theory: [{ subject: "hindi" }, { subject: "english" }],
+            practical: "Physics",
+          },
+        },
+      ],
+    },
+    {
+      uniqueId: "details_10001",
+    },
+  ];
+
+  nestedArray.forEach((nestedData) => {
+    // console.log("first", nestedData);
+
+    nestedData?.subjectDetails?.forEach((nestedSubjectDetails) => {
+      nestedSubjectDetails?.subjectName?.theory.forEach((subjects) => {
+        console.log("subject is", subjects);
+      });
+      // console.log("nested data is :::", nestedSubjectDetails?.subjectName.theory);
+    });
+  });
+
   useEffect(() => {
     serDataValue(compareArray(arr1, arr2));
-    console.log("this is 3rd array data", arr3);
+    // console.log("this is 3rd array data", arr3);
     sortArray();
-    console.log(sortArray(array))
+    // console.log(sortArray(array))
   }, []);
 
   const compareArray = (array1, array2) => {
     return array2.filter((item) => {
       return array1.some((element) => {
-        if(element === item.greeting){
-          arr3.push(item)
+        if (element === item.greeting) {
+          arr3.push(item);
         }
       });
     });
@@ -42,11 +113,11 @@ function ParentCallback() {
     //   });
     // })
   };
-  const array=[12,13,0,9,38,4,55555,12,3424523,33]
-  const sortArray = () =>{
-   return array.sort((a,b)=>a-b)
-    }
-    
+  const array = [12, 13, 0, 9, 38, 4, 55555, 12, 3424523, 33];
+  const sortArray = () => {
+    return array.sort((a, b) => a - b);
+  };
+
   const increasement = useCallback(() => {
     console.log("count is clicked");
     setCount(count + 1);
@@ -64,18 +135,33 @@ function ParentCallback() {
     console.log("Item is clicked");
     return;
   };
-const name = {mobile:""}
+  const name = [
+    { name: "mobile", id: "mobile", isChecked: false },
+    { name: "zipcode", id: "zipcode", isChecked: false },
+    { name: "sumsung", id: "sumsung", isChecked: false },
+    { name: "phone", id: "phone", isChecked: false },
+  ];
 
-const type = {name:"text"}
+  const type = { name: "checkbox" };
 
-const validate = true;
+  const validate = true;
 
-const useAs  = {name:"mobile"}
-
-
+  const useAs = { name: "mobile" };
 
   return (
     <>
+      <div id="parent">
+        <div></div>
+        <div></div>
+        <div>dfe</div>
+        <div>
+          <div></div>
+          <div>
+            <div id="grandDiv">hello</div>
+            <div></div>
+          </div>
+        </div>
+      </div>
       <Navbar />
       <div className="container">
         <h2>Count is::{count}</h2>
@@ -83,7 +169,7 @@ const useAs  = {name:"mobile"}
         <button onClick={() => increasement()}>Increase Count value</button>
         <h2>Item is::{items}</h2>
         <button onClick={() => increaseitem()}>Increase Item value</button>
-      <Input type={type} validate={validate} useAs={useAs} name ={name}/>
+        <Input type={type} validate={validate} useAs={useAs} name={name} />
       </div>
     </>
   );

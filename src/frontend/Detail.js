@@ -32,7 +32,8 @@ function Detail() {
       document
         .getElementById(itemId)
         .scrollIntoView({ behavior: "smooth", block: "center" });
-      document.getElementById(itemId).style.background = "#20c997";
+        document.getElementById(itemId).style.background = "#20c997";
+      // document.getElementById(itemId).classList.add("anyClass");
       document.getElementById(itemId).style.color = "#fff";
 
     }, 200);
