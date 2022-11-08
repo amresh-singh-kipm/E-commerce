@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 
 function Input({ type, validate, name, useAs }) {
   const [formData, setFormData] = useState(name);
@@ -80,10 +80,10 @@ function Input({ type, validate, name, useAs }) {
           }
         });
         if (valid) {
-          setError("")
+          setError("");
         }
         if (!valid) {
-          setError("Please select at least one box")
+          setError("Please select at least one box");
           return false;
         }
       }
@@ -99,9 +99,9 @@ function Input({ type, validate, name, useAs }) {
           }
         }
         if (valid) {
-          setError("")
+          setError("");
         } else {
-          setError("select only one box")
+          setError("select only one box");
           return false;
         }
       }
@@ -139,7 +139,7 @@ function Input({ type, validate, name, useAs }) {
   const submit = (e) => {
     e.preventDefault();
     validation();
-  };  
+  };
   // console.log(formData)
 
   return (
@@ -159,13 +159,13 @@ function Input({ type, validate, name, useAs }) {
                   id={item.id}
                   onChange={handleChangeForCheckbox}
                 />
-                <label htmlFor={item.name}>{item.name}</label>
+                <label style={{fontSize:"2rem"}} htmlFor={item.name}>{item.name}</label>
               </div>
             );
           })}
-        <button onClick={submit}>Submit</button>
+        <button onClick={submit} className="btn btn-danger" style={{fontSize:"2rem",padding:"10px"}} >Submit</button>
+      {error?(<span className="alert alert-danger m-5" style={{fontSize:"20px"}}>{error}</span>):null}
       </form>
-          <span className=" alert-danger">{error&&error}</span>
     </div>
   );
 }

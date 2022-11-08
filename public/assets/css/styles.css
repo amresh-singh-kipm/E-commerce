@@ -516,3 +516,10 @@ margin-bottom:40px ;
 .anyClass{
   background-color: #20c997;
 }
+
+.showChild{
+  display: grid !important ;
+}
+.hideChild{
+  display: none ;
+}

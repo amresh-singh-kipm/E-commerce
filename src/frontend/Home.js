@@ -20,7 +20,7 @@ function Home() {
       className: { inputClass: "form-control", lableClass: "form-group" },
     },
     {
-      name: "Password",
+      name: "Password",   
       type: "password",
       className: { inputClass: "form-control", lableClass: "form-group" },
     },

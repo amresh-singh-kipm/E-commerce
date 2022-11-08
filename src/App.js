@@ -8,6 +8,7 @@ import Login from './frontend/Login';
 import Navbar from './frontend/Navbar';
 import ParentCallback from './frontend/ParentCallback';
 import UseCallback from './frontend/UseCallback';
+import Accordion from './frontend/Accordion';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
      <Route exact path='/parentcallback' element={<ParentCallback/>}/>
      <Route exact path='/detail' element={<Detail/>}/>
      <Route exact path='/error' element={<ErrorBoundary/>}/>
+     <Route exact path='/accordion' element={<Accordion/>}/>
       </Routes>
      </Router>
     </div>

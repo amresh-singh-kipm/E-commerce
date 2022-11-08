@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 
-
 function Form({ name, formHeaderClass, url }) {
+  //STATE FOR LABELING NAME
+
   const [formState, setFormState] = useState(name);
-  console.log("url is", url);
+
+  //STATE FOR SAVING DATA
+
   const [form, setForm] = useState("");
+
+  //FUNCTION FOR ONCHANGE EVENT
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -12,12 +17,12 @@ function Form({ name, formHeaderClass, url }) {
     setForm({ ...form, [name]: value });
   };
 
-  const handleChange2 = (name) => (e) =>{
-      e.preventDefault();
-      setForm({...form,[name]:e.target.value})
-  }
+  // const handleChange = (name) => (e) =>{
+  //     e.preventDefault();
+  //     setForm({...form,[name]:e.target.value})
+  // }
 
-  console.log("form data is ::", form);
+  //FUNCTION FOR SAVING DATA
 
   const onSubmit = (e) => {
     e.preventDefault();
